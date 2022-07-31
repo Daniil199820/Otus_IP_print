@@ -8,11 +8,18 @@
 
 
 
-
+/**
+@brief Template function for checking types of tuple 
+@detailed Method is_same<> - checks type tuple element.
+Method conjunction<> makes logic "and" of results is_same<> for everyone tuple element
+@return true - all elements have same type true otherwise false
+*/
 template <typename T, typename ...Ts>
 using areSame_t = std::conjunction<std::is_same<T, Ts>...>;
 
-
+/**
+@brief End of recursion template function for print_ip<tuple>
+*/
 template<std::size_t I = 0, typename... Tp>
 typename std::enable_if<I == sizeof...(Tp) , void>::type
 print_ip(std::tuple<Tp...> tup)
@@ -22,7 +29,12 @@ print_ip(std::tuple<Tp...> tup)
 
 
 
-
+/**
+@brief Recursion template function for print_ip<tuple>  
+@detailed Template function check number element typle.
+Print tuple elemenents if number "I" less than sizeof and call recursion.
+@throw static_assert if tuple elements aren't same.   
+*/
 template <size_t I = 0, typename... Ts>
 typename std::enable_if<(I < sizeof...(Ts)),
 	void>::type
@@ -43,6 +55,11 @@ typename std::enable_if<(I < sizeof...(Ts)),
 	
 }
 
+
+/**
+@brief Template function for std::string type
+@detailed Template function check number element typle.
+*/
 template <typename T>
 typename std::enable_if<std::is_same<T,std::string>::value, void>::type
 print_ip(T str)
@@ -50,6 +67,10 @@ print_ip(T str)
 	std::cout << str<<'\n';
 }
 
+/**
+@brief Template function for integer typename
+@detailed Template function check number element type.
+*/
 template <typename T>
 typename std::enable_if<!std::is_same<T, std::string>::value && std::is_arithmetic<T>::value, void>::type
 print_ip(T number)
