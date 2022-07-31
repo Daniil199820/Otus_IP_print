@@ -1,0 +1,5 @@
+D:/Otus_IP_print/.gitignore/CMakeFiles/print_ip.dir
+D:/Otus_IP_print/.gitignore/CMakeFiles/PACKAGE.dir
+D:/Otus_IP_print/.gitignore/CMakeFiles/INSTALL.dir
+D:/Otus_IP_print/.gitignore/CMakeFiles/ALL_BUILD.dir
+D:/Otus_IP_print/.gitignore/CMakeFiles/ZERO_CHECK.dir
