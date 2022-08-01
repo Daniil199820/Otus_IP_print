@@ -19,8 +19,6 @@ std::enable_if_t<std::conjunction_v<std::is_same<T, Ts>...>>
 func(T, Ts...) {
     std::cout << "all types in pack are T\n";
 
-
-
 }
 
 /**
