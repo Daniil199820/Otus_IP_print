@@ -58,7 +58,7 @@ typename std::enable_if<(I < sizeof...(Ts)),
 
 /**
 @brief Template function for std::string type
-@detailed Template function check number element typle.
+@detailed Template function check the type by using method is_same<>.
 */
 template <typename T>
 typename std::enable_if<std::is_same<T,std::string>::value, void>::type
@@ -69,7 +69,7 @@ print_ip(T str)
 
 /**
 @brief Template function for integer typename
-@detailed Template function check number element type.
+@detailed Template function check number element type by using method is_arithmetic<>.
 */
 template <typename T>
 typename std::enable_if<!std::is_same<T, std::string>::value && std::is_arithmetic<T>::value, void>::type
@@ -88,6 +88,10 @@ print_ip(T number)
 	std::cout << "\n";
 }
 
+/**
+@brief Template function for containers
+@detailed Template function check the fact what element has begin() and end() for iteration.
+*/
 template <typename T>
 typename std::enable_if<!std::is_same<T, std::string>::value && std::is_same<decltype(begin(std::declval<T>()),end(std::declval<T>()), void()), void>::value, void>::type
 print_ip(T container)
