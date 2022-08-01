@@ -14,8 +14,11 @@
 Method conjunction<> makes logic "and" of results is_same<> for everyone tuple element
 @return true - all elements have same type true otherwise false
 */
-template <typename T, typename ...Ts>
-using areSame_t = std::conjunction<std::is_same<T, Ts>...>;
+template<typename T, typename... Ts>
+std::enable_if_t<std::conjunction_v<std::is_same<T, Ts>...>>
+func(T, Ts...) {
+    std::cout << "all types in pack are T\n";
+}
 
 /**
 @brief End of recursion template function for print_ip<tuple>
@@ -41,7 +44,6 @@ typename std::enable_if<(I < sizeof...(Ts)),
 	print_ip(std::tuple<Ts...> tup)
 {
 
-	static_assert(areSame_t<Ts...>::value,"Are different types of tuple");
 
 	// Print element of tuple
 	
