@@ -22,7 +22,7 @@ using areSame_t = std::conjunction<std::is_same<T, Ts>...>;
 */
 template<std::size_t I = 0, typename... Tp>
 typename std::enable_if<I == sizeof...(Tp) , void>::type
-print_ip(std::tuple<Tp...> tup)
+print_ip(std::tuple<Tp...>)
 {
 	std::cout << "\n";
 }
@@ -45,7 +45,7 @@ typename std::enable_if<(I < sizeof...(Ts)),
 
 	// Print element of tuple
 	
-	if(I==0)
+	if constexpr(I==0)
 		std::cout << std::get<I>(tup);
 	else
 		std::cout << "." << std::get<I>(tup);
