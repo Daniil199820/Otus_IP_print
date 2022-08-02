@@ -42,6 +42,8 @@ jobs:
       with:
           doxyfile-path: "./Doxyfile"
           working-directory: "."
-    - name: Deploy to GitHub Pages
-      id: deployment
+    - name: GH Pages Deployment
       uses: actions/deploy-pages@main
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./html
