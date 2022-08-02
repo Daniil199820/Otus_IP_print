@@ -6,7 +6,6 @@ on:
     - main
     - feature/github_actions
 
- workflow_dispatch:
 
 permissions:
   contents: write
