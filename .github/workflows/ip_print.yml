@@ -43,5 +43,5 @@ jobs:
           doxyfile-path: "./Doxyfile"
           working-directory: "."
     - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@main
+      id: deployment
+      uses: actions/deploy-pages@main
