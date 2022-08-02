@@ -48,6 +48,7 @@ typename std::enable_if<(I < sizeof...(Ts)),
 	
 	if constexpr(I==0)
 		std::cout << std::get<I>(tup);
+		
 	else
 		std::cout << "." << std::get<I>(tup);
 	
