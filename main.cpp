@@ -44,8 +44,6 @@ typename std::enable_if<(I < sizeof...(Ts)),
 	void>::type
 	print_ip(std::tuple<Ts...> tup)
 {
-
-
 	// Print element of tuple
 	
 	if constexpr(I==0)
