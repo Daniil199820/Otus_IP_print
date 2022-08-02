@@ -30,8 +30,6 @@ print_ip(std::tuple<Tp...>)
 {
 	std::cout << "\n";
 
-
-	
 }
 
 
