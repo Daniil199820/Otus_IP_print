@@ -7,10 +7,7 @@ on:
     - feature/github_actions
 
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+
 
 jobs:
   build:
