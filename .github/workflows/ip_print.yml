@@ -7,7 +7,7 @@ on:
     - feature/github_actions
 
  workflow_dispatch:
- 
+
 permissions:
   contents: write
 
@@ -20,6 +20,8 @@ jobs:
         submodules: true
     - name: Setup Pages
       uses: actions/configure-pages@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Build with Jekyll
       uses: actions/jekyll-build-pages@v1
       with:
