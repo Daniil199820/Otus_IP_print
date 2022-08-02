@@ -7,17 +7,10 @@ on:
     - feature/github_actions
 
 permissions:
-  actions: read|write
-  checks: read|write
-  contents: read|write
-  deployments: read|write
-  issues: read|write
-  packages: read|write
-  pull-requests: read|write
-  repository-projects: read|write
-  security-events: read|write
-  statuses: read|write
-  id-token: read|write
+  actions: write
+  contents: write
+  deployments: write
+  id-token: write
 
 
 jobs:
