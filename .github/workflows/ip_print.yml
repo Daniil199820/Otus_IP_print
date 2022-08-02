@@ -8,13 +8,15 @@ on:
 
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
 
+  
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
       with:
         submodules: true
     - name: Setup Pages
