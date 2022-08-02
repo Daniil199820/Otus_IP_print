@@ -38,13 +38,13 @@ jobs:
         asset_path: ./print_ip-0.0.${{ github.run_number }}-Linux.deb
         asset_name: print_ip-0.0.${{ github.run_number }}-Linux.deb
         asset_content_type: application/vnd.debian.binary-package
-    - name: Generate Doxygen Documentation
-      run: doxygen
-    - name: Create .nojekyll
-      run: touch ${{ inputs.folder }}/.nojekyll
-    - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@3.7.1
+    - name: Doxygen Action
+      uses: mattnotmitt/doxygen-action@v1.1.0
       with:
-        github_token: ${{ inputs.github_token }}
-        branch: ${{ inputs.branch }}
-        folder: ${{ inputs.folder }}
+        doxyfile-path: "./Doxyfile" # default is ./Doxyfile
+        working-directory: "." # default is .
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./html
