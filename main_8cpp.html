@@ -63,7 +63,9 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">main.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -90,33 +92,48 @@ Include dependency graph for main.cpp:</div>
 </map>
 </div>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structare__same.html">are_same&lt;... &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structare__same_3_01S_00_01T_00_01Ts_8_8_8_01_4.html">are_same&lt; S, T, Ts... &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structare__same_3_01T_00_01T_00_01Ts_8_8_8_01_4.html">are_same&lt; T, T, Ts... &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a9c3045145b343b22ddc4f4c09d6ed6a6"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Ts&gt; </td></tr>
 <tr class="memitem:a9c3045145b343b22ddc4f4c09d6ed6a6"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; std::conjunction_v&lt; std::is_same&lt; T, Ts &gt;... &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9c3045145b343b22ddc4f4c09d6ed6a6">func</a> (T, Ts...)</td></tr>
-<tr class="memdesc:a9c3045145b343b22ddc4f4c09d6ed6a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template function for checking types of tuple @detailed Method is_same&lt;&gt; - checks type tuple element. Method conjunction&lt;&gt; makes logic "and" of results is_same&lt;&gt; for everyone tuple element.  <a href="main_8cpp.html#a9c3045145b343b22ddc4f4c09d6ed6a6">More...</a><br /></td></tr>
+<tr class="memdesc:a9c3045145b343b22ddc4f4c09d6ed6a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template function for checking types of tuple detailed Method is_same&lt;&gt; - checks type tuple element. Method conjunction&lt;&gt; makes logic "and" of results is_same&lt;&gt; for everyone tuple element.  <a href="main_8cpp.html#a9c3045145b343b22ddc4f4c09d6ed6a6">More...</a><br /></td></tr>
 <tr class="separator:a9c3045145b343b22ddc4f4c09d6ed6a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c4f0ae98243defb3b0d7fead9e1f7b5"><td class="memTemplParams" colspan="2">template&lt;std::size_t I = 0, typename... Tp&gt; </td></tr>
 <tr class="memitem:a6c4f0ae98243defb3b0d7fead9e1f7b5"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; I==sizeof...(Tp), void &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a6c4f0ae98243defb3b0d7fead9e1f7b5">print_ip</a> (std::tuple&lt; Tp... &gt;)</td></tr>
 <tr class="memdesc:a6c4f0ae98243defb3b0d7fead9e1f7b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">End of recursion template function for print_ip&lt;tuple&gt;  <a href="main_8cpp.html#a6c4f0ae98243defb3b0d7fead9e1f7b5">More...</a><br /></td></tr>
 <tr class="separator:a6c4f0ae98243defb3b0d7fead9e1f7b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f2794a246327b36176567976e17d325"><td class="memTemplParams" colspan="2">template&lt;size_t I = 0, typename... Ts&gt; </td></tr>
-<tr class="memitem:a9f2794a246327b36176567976e17d325"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(I&lt; sizeof...(Ts)), void &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9f2794a246327b36176567976e17d325">print_ip</a> (std::tuple&lt; Ts... &gt; tup)</td></tr>
-<tr class="memdesc:a9f2794a246327b36176567976e17d325"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursion template function for print_ip&lt;tuple&gt; <br  />
- @detailed Template function check number element typle. Print tuple elemenents if number "I" less than sizeof and call recursion.  <a href="main_8cpp.html#a9f2794a246327b36176567976e17d325">More...</a><br /></td></tr>
-<tr class="separator:a9f2794a246327b36176567976e17d325"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bc526e81755b24b9757d9ddedf78010"><td class="memTemplParams" colspan="2">template&lt;size_t I = 0, typename... Ts, typename Fake  = std::enable_if_t&lt;are_same_v&lt;Ts...&gt;,void&gt;&gt; </td></tr>
+<tr class="memitem:a4bc526e81755b24b9757d9ddedf78010"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;(I&lt; sizeof...(Ts)), void &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4bc526e81755b24b9757d9ddedf78010">print_ip</a> (std::tuple&lt; Ts... &gt; tup)</td></tr>
+<tr class="memdesc:a4bc526e81755b24b9757d9ddedf78010"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursion template function for print_ip&lt;tuple&gt; <br  />
+ detailed Template function check number element typle. Print tuple elemenents if number "I" less than sizeof and call recursion.  <a href="main_8cpp.html#a4bc526e81755b24b9757d9ddedf78010">More...</a><br /></td></tr>
+<tr class="separator:a4bc526e81755b24b9757d9ddedf78010"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77707d78cc0b2863e1ce8029837f8dca"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a77707d78cc0b2863e1ce8029837f8dca"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_same&lt; T, std::string &gt;::value, void &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a77707d78cc0b2863e1ce8029837f8dca">print_ip</a> (T str)</td></tr>
-<tr class="memdesc:a77707d78cc0b2863e1ce8029837f8dca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template function for std::string type @detailed Template function check the type by using method is_same&lt;&gt;.  <a href="main_8cpp.html#a77707d78cc0b2863e1ce8029837f8dca">More...</a><br /></td></tr>
+<tr class="memdesc:a77707d78cc0b2863e1ce8029837f8dca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template function for std::string type detailed Template function check the type by using method is_same&lt;&gt;.  <a href="main_8cpp.html#a77707d78cc0b2863e1ce8029837f8dca">More...</a><br /></td></tr>
 <tr class="separator:a77707d78cc0b2863e1ce8029837f8dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d9e7c055963249a0a4f5460933ecf8d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a9d9e7c055963249a0a4f5460933ecf8d"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;!std::is_same&lt; T, std::string &gt;::value &amp;&amp;std::is_arithmetic&lt; T &gt;::value, void &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9d9e7c055963249a0a4f5460933ecf8d">print_ip</a> (T number)</td></tr>
-<tr class="memdesc:a9d9e7c055963249a0a4f5460933ecf8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template function for integer typename @detailed Template function check number element type by using method is_arithmetic&lt;&gt;.  <a href="main_8cpp.html#a9d9e7c055963249a0a4f5460933ecf8d">More...</a><br /></td></tr>
+<tr class="memdesc:a9d9e7c055963249a0a4f5460933ecf8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template function for integer typename detailed Template function check number element type by using method is_arithmetic&lt;&gt;.  <a href="main_8cpp.html#a9d9e7c055963249a0a4f5460933ecf8d">More...</a><br /></td></tr>
 <tr class="separator:a9d9e7c055963249a0a4f5460933ecf8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49ad73830ed6b86a3d4e0a595b9f301d"><td class="memItemLeft" align="right" valign="top">void ::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a49ad73830ed6b86a3d4e0a595b9f301d">print_ip</a> (T container)</td></tr>
 <tr class="separator:a49ad73830ed6b86a3d4e0a595b9f301d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a909482f27fc76496680338b82a581648"><td class="memTemplParams" colspan="2">template&lt;typename ... Ts&gt; </td></tr>
+<tr class="memitem:a909482f27fc76496680338b82a581648"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a909482f27fc76496680338b82a581648">are_same_v</a> = <a class="el" href="structare__same.html">are_same</a>&lt;Ts...&gt;::value</td></tr>
+<tr class="separator:a909482f27fc76496680338b82a581648"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a9c3045145b343b22ddc4f4c09d6ed6a6" name="a9c3045145b343b22ddc4f4c09d6ed6a6"></a>
@@ -147,7 +164,7 @@ template&lt;typename T , typename... Ts&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Template function for checking types of tuple @detailed Method is_same&lt;&gt; - checks type tuple element. Method conjunction&lt;&gt; makes logic "and" of results is_same&lt;&gt; for everyone tuple element. </p>
+<p>Template function for checking types of tuple detailed Method is_same&lt;&gt; - checks type tuple element. Method conjunction&lt;&gt; makes logic "and" of results is_same&lt;&gt; for everyone tuple element. </p>
 <dl class="section return"><dt>Returns</dt><dd>true - all elements have same type true otherwise false </dd></dl>
 
 </div>
@@ -191,13 +208,13 @@ template&lt;std::size_t I = 0, typename... Tp&gt; </div>
 
 </div>
 </div>
-<a id="a9f2794a246327b36176567976e17d325" name="a9f2794a246327b36176567976e17d325"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f2794a246327b36176567976e17d325">&#9670;&nbsp;</a></span>print_ip() <span class="overload">[2/5]</span></h2>
+<a id="a4bc526e81755b24b9757d9ddedf78010" name="a4bc526e81755b24b9757d9ddedf78010"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bc526e81755b24b9757d9ddedf78010">&#9670;&nbsp;</a></span>print_ip() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_t I = 0, typename... Ts&gt; </div>
+template&lt;size_t I = 0, typename... Ts, typename Fake  = std::enable_if_t&lt;are_same_v&lt;Ts...&gt;,void&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">std::enable_if&lt;(I&lt; sizeof...(Ts)), void &gt;::type print_ip </td>
@@ -210,7 +227,7 @@ template&lt;size_t I = 0, typename... Ts&gt; </div>
 </div><div class="memdoc">
 
 <p>Recursion template function for print_ip&lt;tuple&gt; <br  />
- @detailed Template function check number element typle. Print tuple elemenents if number "I" less than sizeof and call recursion. </p>
+ detailed Template function check number element typle. Print tuple elemenents if number "I" less than sizeof and call recursion. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">static_assert</td><td>if tuple elements aren't same. <br  />
@@ -257,7 +274,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Template function for integer typename @detailed Template function check number element type by using method is_arithmetic&lt;&gt;. </p>
+<p>Template function for integer typename detailed Template function check number element type by using method is_arithmetic&lt;&gt;. </p>
 
 </div>
 </div>
@@ -279,7 +296,32 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Template function for std::string type @detailed Template function check the type by using method is_same&lt;&gt;. </p>
+<p>Template function for std::string type detailed Template function check the type by using method is_same&lt;&gt;. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a909482f27fc76496680338b82a581648" name="a909482f27fc76496680338b82a581648"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a909482f27fc76496680338b82a581648">&#9670;&nbsp;</a></span>are_same_v</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ... Ts&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool are_same_v = <a class="el" href="structare__same.html">are_same</a>&lt;Ts...&gt;::value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
