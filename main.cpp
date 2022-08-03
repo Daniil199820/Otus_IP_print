@@ -7,10 +7,20 @@
 #include <list>
 
 
+template <typename ...>
+struct are_same : std::true_type {};
 
+template <typename S, typename T, typename ... Ts>
+struct are_same <S, T, Ts...> : std::false_type {};
+
+template <typename T, typename ... Ts>
+struct are_same <T, T, Ts...> : are_same<T, Ts...> {};
+
+template <typename ... Ts>
+inline constexpr bool are_same_v = are_same<Ts...>::value;
 /**
 @brief Template function for checking types of tuple 
-@detailed Method is_same<> - checks type tuple element.
+detailed Method is_same<> - checks type tuple element.
 Method conjunction<> makes logic "and" of results is_same<> for everyone tuple element
 @return true - all elements have same type true otherwise false
 */
@@ -18,14 +28,13 @@ template<typename T, typename... Ts>
 std::enable_if_t<std::conjunction_v<std::is_same<T, Ts>...>>
 func(T, Ts...) {
     std::cout << "all types in pack are T\n";
-
 }
 
 /**
 @brief End of recursion template function for print_ip<tuple>
 */
-template<std::size_t I = 0, typename... Tp>
-typename std::enable_if<I == sizeof...(Tp) , void>::type
+template<std::size_t I = 0,typename... Tp>
+typename std::enable_if<I == sizeof...(Tp), void>::type
 print_ip(std::tuple<Tp...>)
 {
 	std::cout << "\n";
@@ -35,20 +44,19 @@ print_ip(std::tuple<Tp...>)
 
 /**
 @brief Recursion template function for print_ip<tuple>  
-@detailed Template function check number element typle.
+detailed Template function check number element typle.
 Print tuple elemenents if number "I" less than sizeof and call recursion.
 @throw static_assert if tuple elements aren't same.   
 */
-template <size_t I = 0, typename... Ts>
+template <size_t I = 0, typename... Ts,typename Fake = std::enable_if_t<are_same_v<Ts...>,void>>
 typename std::enable_if<(I < sizeof...(Ts)),
 	void>::type
 	print_ip(std::tuple<Ts...> tup)
 {
 	// Print element of tuple
-	
 	if constexpr(I==0)
 		std::cout << std::get<I>(tup);
-		
+
 	else
 		std::cout << "." << std::get<I>(tup);
 	
@@ -60,7 +68,7 @@ typename std::enable_if<(I < sizeof...(Ts)),
 
 /**
 @brief Template function for std::string type
-@detailed Template function check the type by using method is_same<>.
+detailed Template function check the type by using method is_same<>.
 */
 template <typename T>
 typename std::enable_if<std::is_same<T,std::string>::value, void>::type
@@ -71,7 +79,7 @@ print_ip(T str)
 
 /**
 @brief Template function for integer typename
-@detailed Template function check number element type by using method is_arithmetic<>.
+detailed Template function check number element type by using method is_arithmetic<>.
 */
 template <typename T>
 typename std::enable_if<!std::is_same<T, std::string>::value && std::is_arithmetic<T>::value, void>::type
@@ -92,7 +100,7 @@ print_ip(T number)
 
 /**
 @brief Template function for containers
-@detailed Template function check the fact what element has begin() and end() for iteration.
+detailed Template function check the fact what element has begin() and end() for iteration.
 */
 template <typename T>
 typename std::enable_if<!std::is_same<T, std::string>::value && std::is_same<decltype(begin(std::declval<T>()),end(std::declval<T>()), void()), void>::value, void>::type
@@ -117,7 +125,7 @@ int main()
 	print_ip(std::string{ "Hello, World!" }); // Hello, World!
 	print_ip(std::vector<int>{100, 200, 300, 400}); // 100.200.300.400
 	print_ip(std::list<short>{400, 300, 200, 100}); // 400.300.200.100
-	print_ip(std::make_tuple(123,456, 789, 0)); // 123.456.789.0
+	print_ip(std::make_tuple(123, 456, 789, 0)); // 123.456.789.0
 
 	return 0;
 }
